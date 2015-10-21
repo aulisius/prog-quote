@@ -1,4 +1,4 @@
-var random = require("random-js")
+var random = require("random-js")()
 
 var authors = [
     "Ken Thompson",
@@ -30,9 +30,10 @@ var quote = [
     "Java is to JavaScript what Car is to Carpet."
     ]
 
-exports.quotes = function() { 
+module.exports.quotes = function() { 
     var index = random.integer(0, 11)
-    return { author : authors[index] , quote : quote[index] }
+    console.log(authors[index] + ' ' + quote[index])
+    return({ author : authors[index] , quote : quote[index] })
 }
 
 
